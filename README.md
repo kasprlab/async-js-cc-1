@@ -37,6 +37,6 @@ we have been using.
 lecture (you can even copy this code, no need to type the same code)
 
 Test data:
-§ Coordinates 1: 52.508, 13.381 (Latitude, Longitude)
-§ Coordinates 2: 19.037, 72.873
-§ Coordinates 3: -33.933, 18.474
+- Coordinates 1: 52.508, 13.381 (Latitude, Longitude)
+- Coordinates 2: 19.037, 72.873
+- Coordinates 3: -33.933, 18.474
