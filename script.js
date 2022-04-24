@@ -25,7 +25,7 @@ const whereAmI = function(lat, lang) {
  fetch(`https://geocode.xyz/${lat},${lang}?geoit=json`)
   .then(response => {
 
-    if (!response.ok) throw new Error('Country not found')
+    if (!response.ok) throw new Error(`Problem with Geocoding ${response.status}`)
     
     return response.json()
   })
@@ -37,13 +37,17 @@ const whereAmI = function(lat, lang) {
     // question 6
     return fetch(`https://restcountries.com/v2/name/${data.country}`)
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) throw new Error(`Country not found ${response.status}`)
+
+    return response.json()
+  })
   .then(data => {
-    console.log(data[0])
+    //console.log(data[0])
   
     renderCountry(data[0])
   })
- .catch(err => console.error(`🔥`))
+ .catch(err => console.error(`${err.message} 🔥`))
 
 
 } //end of function whereAmI
